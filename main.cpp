@@ -31,33 +31,33 @@ int main()
         int y = light_y-initial_ty;
         fprintf(stderr, "%d %d %d %d\n", initial_ty, initial_tx, light_x, light_y);
         while(initial_tx!=light_x || initial_ty!=light_y){
-            if (x>0&&y>0){
+            if (x>0&&y<0){
                 printf("NE\n");
                 x-=1;
                 y+=1;
                 initial_tx+=1;
-                initial_ty+=1;
+                initial_ty-=1;
             }
-            else if(x<0&&y>0){
+            else if(x<0&&y<0){
                 printf("NW\n");
                 x+=1;
                 y-=1;
                 initial_tx-=1;
                 initial_ty+=1;
             }
-            else if(x>0&&y<0){
+            else if(x>0&&y>0){
                 printf("SE\n");
-                x+=1;
-                y+=1;
+                x-=1;
+                y-=1;
                 initial_tx+=1;
-                initial_ty-=1;
+                initial_ty+=1;
             }
             else if(x<0&&y>0){
                 printf("SW\n");
-                x-=1;
+                x+=1;
                 y-=1;
                 initial_tx-=1;
-                initial_ty-=1;
+                initial_ty+=1;
             }
             else if(x>0&&y==0){
                 printf("E\n");
